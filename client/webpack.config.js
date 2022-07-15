@@ -27,13 +27,16 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'jate',
         short_name: 'jate',
         description: 'Note taker!',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
-        start_url: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
+        display: "standalone",
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),

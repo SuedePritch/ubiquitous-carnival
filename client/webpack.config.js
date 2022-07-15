@@ -24,7 +24,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         name: 'jate',
@@ -50,10 +50,10 @@ module.exports = () => {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
-        },
+        // {
+        //   test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        //   type: 'asset/resource',
+        // },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
